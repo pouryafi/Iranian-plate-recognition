@@ -1,18 +1,18 @@
 # PlateGate - Iranian License Plate Recognition System
 
-![PlateGate Logo](https://via.placeholder.com/150x150.png?text=PlateGate)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
+
 **PlateGate** is an advanced system for recognizing Iranian vehicle license plates and managing entry/exit events. Built with modern technologies like **YOLO** for plate detection, **CNN** for character recognition, and **FastAPI** for the backend API, it provides a robust solution for automated vehicle tracking and billing based on parking duration. The project includes a user-friendly web interface for uploading images, viewing detection results, and generating payroll reports.
 
-![examlpe](images/photo_2025-09-21_03-59-37.jpg)
-![examlpe](images/photo_2025-09-21_04-00-09.jpg)
-![examlpe](images/photo_2025-09-21_04-00-16.jpg)
-![examlpe](images/unnamed.png)
-![examlpe](<images/unnamed%20(1).png>)
+
+
+
 
 ---
 
 ## Features
-
 - **License Plate Recognition**: Detects Iranian license plates using YOLO and recognizes characters using a custom CNN model.
 - **Entry/Exit Tracking**: Records vehicle entry and exit times in a SQLite database.
 - **Billing Calculation**: Computes parking fees based on duration and hourly rate.
@@ -23,9 +23,7 @@
 ---
 
 ## Project Architecture
-
 PlateGate consists of three main components:
-
 1. **Backend (`app.py`)**:
    - Built with FastAPI for handling API requests.
    - Uses SQLite for persistent storage of entry/exit events.
@@ -42,9 +40,7 @@ PlateGate consists of three main components:
 ---
 
 ## Prerequisites
-
 To run PlateGate, you need the following:
-
 - **Python**: 3.8 or higher
 - **Dependencies**:
   - FastAPI (`fastapi`)
@@ -65,7 +61,6 @@ To run PlateGate, you need the following:
 ---
 
 ## Installation
-
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/yourusername/plategate.git
@@ -104,7 +99,6 @@ To run PlateGate, you need the following:
 ---
 
 ## Usage
-
 1. **Uploading an Image**:
    - Navigate to the web interface (`http://localhost:8000`).
    - Select an image of an Iranian license plate and specify the hourly rate.
@@ -122,7 +116,6 @@ To run PlateGate, you need the following:
 ---
 
 ## Project Structure
-
 ```
 plategate/
 ├── app.py                # FastAPI backend for API and database management
@@ -139,9 +132,7 @@ plategate/
 ---
 
 ## Limitations for Browser-Based Deployment
-
 PlateGate cannot be fully deployed in a browser-based environment (e.g., using Pyodide/Emscripten) due to the following constraints:
-
 - **Heavy Dependencies**: Libraries like OpenCV and PyTorch are not fully supported in Pyodide.
 - **Model Size**: The YOLO and CNN model files are too large for browser-based execution.
 - **File I/O**: Pyodide does not support local file operations (e.g., saving images to `uploads/` or accessing `plategate.db`).
@@ -152,7 +143,6 @@ For these reasons, only the `README.md` is shared publicly to describe the proje
 ---
 
 ## Security Considerations
-
 - **Sensitive Files**: Model files (`best.pt`, `best_plate_model.pth`) and the database (`plategate.db`) are excluded from public repositories to prevent unauthorized access.
 - **Image Privacy**: Uploaded images in the `uploads/` directory may contain sensitive data (e.g., real license plates) and are not shared.
 - **Secure Deployment**: For public demos, deploy the backend on a private server and expose only the web interface, with authentication if needed.
@@ -160,31 +150,30 @@ For these reasons, only the `README.md` is shared publicly to describe the proje
 ---
 
 ## Demo
-
 Due to the sensitive nature of the project, a live demo is not provided in this repository. To see PlateGate in action:
-
 1. Deploy the project locally or on a private server as described in the Installation section.
 2. Contact the repository owner for access to a private demo (if available).
 
-_Sample output (mock-up):_  
-![Sample Detection](https://via.placeholder.com/300x150.png?text=Sample+Plate+Detection)
+*Sample output (mock-up):*  
+![examlpe](images/photo_2025-09-21_03-59-37.jpg)
+![examlpe](images/photo_2025-09-21_04-00-09.jpg)
+![examlpe](images/photo_2025-09-21_04-00-16.jpg)
+![examlpe](images/unnamed.png)
+![examlpe](images/unnamed%20(1).png)
 
 ---
 
-## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-> **Note**: The model files and certain implementation details are proprietary and not included in this repository.
+
 
 ---
 
 ## Contributing
-
 Contributions are welcome! Please fork the repository and submit a pull request with your changes. For major contributions, contact the repository owner to discuss model access or implementation details.
 
 ---
 
 ## Contact
+For questions or inquiries, please contact [pourya fakhimi] at [pouryafakhimi0943@gmail.com] or open an issue on GitHub.
 
-For questions or inquiries, please contact [Pourya Fakhimi] at [pouryafakhimi0943@gmail.com] or open an issue on GitHub.
